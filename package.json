@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "NODE_ENV=production webpack",
     "start": "start",
-    "dev": "concurrently \"webpack-dev-server --hot --mode development\""
+    "dev": "NODE_ENV=development webpack serve"
   },
   "repository": {
     "type": "git",

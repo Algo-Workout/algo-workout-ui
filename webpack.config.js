@@ -44,14 +44,22 @@ module.exports = {
       },
     ]
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.css']
+  },
   devServer: {
     port: 8080,
-    static: {
-        directory: path.join(__dirname)
-    },
-    proxy: {
-      '/api': 'http://localhost:3000',
-      secure: false,
-    },
+    static: [
+      {
+          directory: path.join(__dirname)
+      },
+    ],
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:3000',
+        secure: false,
+      }
+    ]
   }
 }
